@@ -9,18 +9,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-exec');
 	grunt.loadNpmTasks('grunt-sed');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
-	grunt.initConfig({
-		version: grunt.file.readJSON('package.json').version,
+
 		
-	});
+
 
 	f = require('util').format;
 
-module.exports = function(grunt) {
-	grunt.loadNpmTasks('grunt-exec');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.initConfig({
+		version: grunt.file.readJSON('package.json').version,
 		exec:{
 			test: {
 				cmd:'NODE_ENV=test mocha'
@@ -127,5 +123,4 @@ module.exports = function(grunt) {
 		}
 		return grunt.task.run(tasks);
 	});
-};
 };
